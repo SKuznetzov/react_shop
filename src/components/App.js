@@ -8,7 +8,7 @@ class App extends Component {
         return (
             <div className='restorant_select'>
                <div className='restorant_select_top'>
-                  <div className='restorant_select_top-header'>Выбери ресторан</div>
+                  <div className='restorant_select_top-header font-effect-outline'>Выбери ресторан</div>
                    
                   <div className='arrow_picker'>
                   <div className='arrow_picker_up'></div>
