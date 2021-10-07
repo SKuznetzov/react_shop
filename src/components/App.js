@@ -10,7 +10,10 @@ class App extends Component {
     }
 
     displayList = ()=>{
-        console.log('click')
+        const {display} = this.state;
+        this.setState({
+            display: !display
+        });
     }
     render(){
 
@@ -25,13 +28,13 @@ class App extends Component {
                 </div>
               </div>
 
-              <div className='restaurant_select_button'>
+              {this.state.display ? (<div className='restaurant_select_button'>
                   <ul>
                       {restaurants.map(restaurant =>{
                        return <li key={restaurant.id}>{restaurant.title}</li>
                       })}
                   </ul>
-              </div>
+              </div>) : null}
               <button>Перейти в ресторан</button>
             </div>
         );
