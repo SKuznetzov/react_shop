@@ -3,6 +3,11 @@ import restaurants from '../sample-restaurants';
 
 
 class App extends Component {
+    state = {
+        display: false,
+        title: '',
+        url: ''
+    }
     render(){
 
         return (
