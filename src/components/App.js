@@ -14,13 +14,24 @@ class App extends Component {
         this.setState({
             display: !display
         });
-    }
+    };
+
+    getTitle = (restaurant)=>{
+        const {title,url} = restaurant;
+        this.setState({
+            title,url,display: false
+        })
+    };
+
+    getRestaurant = ()=>{
+        console.log('111')
+    };
     render(){
 
         return (
             <div className='restorant_select'>
                <div className='restorant_select_top'>
-                  <div onClick={this.displayList}className='restorant_select_top-header font-effect-outline'>Выбери ресторан</div>
+                  <div onClick={this.displayList}className='restorant_select_top-header font-effect-outline'>{this.state.title ? this.state.title : 'Выбери ресторан'}</div>
                    
                   <div className='arrow_picker'>
                   <div className='arrow_picker_up'></div>
@@ -31,11 +42,11 @@ class App extends Component {
               {this.state.display ? (<div className='restaurant_select_button'>
                   <ul>
                       {restaurants.map(restaurant =>{
-                       return <li key={restaurant.id}>{restaurant.title}</li>
+                       return <li onClick={()=>this.getTitle(restaurant)}key={restaurant.id}>{restaurant.title}</li>
                       })}
                   </ul>
               </div>) : null}
-              <button>Перейти в ресторан</button>
+              {this.state.title && !this.state.display ? <button onClick={this.getRestaurant}>Перейти в ресторан</button> : null}
             </div>
         );
     }
