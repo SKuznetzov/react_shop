@@ -8,12 +8,16 @@ class App extends Component {
         title: '',
         url: ''
     }
+
+    displayList = ()=>{
+        console.log('click')
+    }
     render(){
 
         return (
             <div className='restorant_select'>
                <div className='restorant_select_top'>
-                  <div className='restorant_select_top-header font-effect-outline'>Выбери ресторан</div>
+                  <div onClick={this.displayList}className='restorant_select_top-header font-effect-outline'>Выбери ресторан</div>
                    
                   <div className='arrow_picker'>
                   <div className='arrow_picker_up'></div>
