@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import restaurants from '../sample-restaurants';
 
 
-class App extends Component {
+class Landing extends Component {
     state = {
         display: false,
         title: '',
@@ -51,4 +51,4 @@ class App extends Component {
         );
     }
 }
- export default App;
+ export default Landing;

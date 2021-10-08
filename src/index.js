@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import Landing from './components/Landing';
 import './css/style.css';
 
-ReactDOM.render(<App />,document.querySelector('#root'));
+ReactDOM.render(<Landing />,document.querySelector('#root'));
 
 
