@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import Header from './Header'
+import Order from './Order'
+import MenuAdmin from './MenuAdmin'
+
+
 
 export default class App extends Component {
     render() {
@@ -9,8 +13,8 @@ export default class App extends Component {
                     <div className="menu">
                         <Header />
                     </div>
-                        {/* <Order />
-                        <MenuAdmin /> */}
+                        <Order />
+                        <MenuAdmin />
                     </div>
             
         )
