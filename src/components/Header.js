@@ -9,7 +9,7 @@ export default class Header extends Component {
 
                         <div className="header-rating">
                             <div className="header-rating">Рейтинг: </div>
-                            <div className="header-rating">aaa</div>
+                            <div className="header-rating">★★★★★</div>
                         </div>
 
                         <div className="header-divider"></div>
