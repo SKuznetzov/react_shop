@@ -13,7 +13,7 @@ export default class Header extends Component {
                         </div>
 
                         <div className="header-divider"></div>
-                        <h1 className="font-effect-fire-animation">Hot Burgers</h1>
+                        <h1 className="font-effect-fire-animation">{this.props.title}</h1>
                         <h3>
                             <span>
                              Быстрая доставка горячих
