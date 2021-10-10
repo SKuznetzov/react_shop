@@ -24,7 +24,8 @@ class Landing extends Component {
     };
 
     getRestaurant = ()=>{
-        console.log('111')
+        const {url} = this.state
+        this.props.history.push(`/restaurant/${url}`)
     };
     render(){
 
