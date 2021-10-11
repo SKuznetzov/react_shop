@@ -11,7 +11,9 @@ export default class App extends Component {
         order: {}
     }
     addBurger = (burger) =>{
-        console.log('333',burger)
+        const burgers = {...this.state.burgers}
+        burgers[`burger${Date.now()}`] = burger
+        this.setState({burgers})
     }
     render() {
         return (            
