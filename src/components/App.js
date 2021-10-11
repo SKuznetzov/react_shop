@@ -6,17 +6,22 @@ import MenuAdmin from './MenuAdmin'
 
 
 export default class App extends Component {
+    state = {
+        burgers: {},
+        order: {}
+    }
+    addBurger = (burger) =>{
+        console.log('333',burger)
+    }
     render() {
-        return (
-            
-                <div className="burger-paradise">
-                    <div className="menu">
-                        <Header title="Very Hot Burger" />
-                    </div>
-                        <Order />
-                        <MenuAdmin />
-                    </div>
-            
+        return (            
+            <div className="burger-paradise">
+                <div className="menu">
+                    <Header title="Very Hot Burger" />
+                </div>
+                    <Order />
+                    <MenuAdmin addBurger={this.addBurger} />
+            </div>
         )
     }
 }

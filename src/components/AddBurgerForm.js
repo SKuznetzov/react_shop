@@ -11,11 +11,12 @@ export default class AddBurgerForm extends Component {
         event.preventDefault()
         const burger = {
             name: this.nameRef.current.value,
-            price: parseFloat(this.praceRef.current.value),
+            price: parseFloat(this.priceRef.current.value),
             status: this.statusRef.current.value,
             desc: this.descRef.current.value,
             image: this.imageRef.current.value,
         }
+        this.props.addBurger(burger)
     }
     render() {
         return (

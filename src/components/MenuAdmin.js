@@ -5,7 +5,7 @@ export default class MenuAdmin extends Component {
         return (
             <div className="menu-admin">
                 <h2>Управление меню</h2>
-                <AddBurgerForm />
+                <AddBurgerForm addBurger={this.props.addBurger} />
             </div>
         )
     }
