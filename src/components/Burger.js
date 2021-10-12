@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 export default class Burger extends Component {
+    handleClick = () =>{
+        this.props.addOrder(this.props.index)
+    }
     render() {
         const { image,name,price,desc,status } = this.props.details
         const isAvailable = status === 'available'
@@ -14,7 +17,11 @@ export default class Burger extends Component {
                     <span className="price">{price} rub</span>
                     </h3> 
                     <p>{desc}</p>
-                    <button className="buttonOrder" disabled={!isAvailable}>
+                    <button 
+                    className="buttonOrder" 
+                    disabled={!isAvailable}
+                    onClick={this.handleClick}
+                    >
                         {isAvailable ? 'Заказать' : 'Временно нет'}</button>
                 </div>
             </li>

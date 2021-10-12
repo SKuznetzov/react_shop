@@ -19,6 +19,11 @@ export default class App extends Component {
     loadSampleBurgers = () =>{
         this.setState({burgers: sampleBurgers})
     }
+    addOrder = key =>{
+        const order = {...this.state.order}
+        order[key] = order[key] + 1 || 1
+        this.setState({order})
+    }
     render() {
         return (            
             <div className="burger-paradise">
@@ -29,6 +34,7 @@ export default class App extends Component {
                             return <Burger 
                             key={key}
                             index={key}
+                            addOrder={this.addOrder}
                             details={this.state.burgers[key]} />
                         })}
                     </ul>
