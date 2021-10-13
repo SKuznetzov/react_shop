@@ -11,6 +11,7 @@ export default class App extends Component {
         burgers: {},
         order: {}
     }
+
     addBurger = (burger) =>{
         const burgers = {...this.state.burgers}
         burgers[`burger${Date.now()}`] = burger
