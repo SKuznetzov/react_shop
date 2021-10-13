@@ -4,7 +4,7 @@ import Order from './Order'
 import MenuAdmin from './MenuAdmin'
 import Burger from './Burger'
 import sampleBurgers from '../sample-burgers'
-
+import base from '../base'
 
 export default class App extends Component {
     state = {
