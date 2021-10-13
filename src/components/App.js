@@ -11,7 +11,13 @@ export default class App extends Component {
         burgers: {},
         order: {}
     }
-
+    componentDidMount(){
+        const { params } = this.props.match
+        this.ref = base.syncState(`${params.restaurantId}/burders`, {
+            context: this,
+            state: 'burgers'
+        })
+    }
     addBurger = (burger) =>{
         const burgers = {...this.state.burgers}
         burgers[`burger${Date.now()}`] = burger
