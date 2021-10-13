@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Shipment from './Shipment'
 export default class Order extends Component {
     renderOrder = (key) =>{
         const burger = this.props.burgers[key]
@@ -40,11 +40,14 @@ export default class Order extends Component {
                     {idOrders.map(this.renderOrder
                     )}
                 </ul>
-                <div className="total">
-                    <div className="total_wrap">
-                        <div className="total_wrap-final">Итого: {total} rub</div>
+                
+                {total > 0 ? (
+                    <Shipment total={total} />
+                ) : (
+                    <div className="nithingSelected">
+                        Выберите блюда и добавте к заказу
                     </div>
-                </div>
+                )}
             </div>
         )
     }
