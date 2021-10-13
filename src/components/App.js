@@ -18,6 +18,9 @@ export default class App extends Component {
             state: 'burgers'
         })
     }
+    componentWillUnmount(){
+        base.removeBinding(this.ref)
+    }
     addBurger = (burger) =>{
         const burgers = {...this.state.burgers}
         burgers[`burger${Date.now()}`] = burger
