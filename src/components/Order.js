@@ -6,6 +6,7 @@ export default class Order extends Component {
         const count = this.props.order[key]
 
         const isAvailable = burger && burger.status === 'available'
+        if (!burger) return null
         if (!isAvailable){
             return <li className="unavailable" key={key}>
                 Извините,{burger ? burger.name : 'burger'} временно невщступен
