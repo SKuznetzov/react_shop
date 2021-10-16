@@ -13,7 +13,7 @@ export default class Order extends Component {
                 <CSSTransition 
                     classNames="order"
                     key={key}
-                    timeout={{ enter: 5000, exit: 5000}}
+                    timeout={{ enter: 5000, exit: 500}}
                 >
                     <li className="unavailable" key={key}>
                         Извините,{burger ? burger.name : 'burger'} временно невщступен
@@ -26,11 +26,18 @@ export default class Order extends Component {
             <CSSTransition 
                 classNames="order"
                 key={key}
-                timeout={{ enter: 5000, exit: 5000}}
+                timeout={{ enter: 5000, exit: 500}}
             >
             <li key={key}>
                <span>
-                   <span>{count}</span>
+                   <TransitionGroup component='span' className='count'>
+                       <CSSTransition 
+                       classNames="count"
+                       key={count}
+                       timeout={{ enter: 5000, exit: 500}}>
+                           <span>{count}</span>
+                       </CSSTransition>
+                   </TransitionGroup>
                    шт. {burger.name}
                    <span>{count * burger.price} rub</span>
                    <button 
