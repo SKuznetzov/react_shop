@@ -8,9 +8,9 @@ export default class Order extends Component {
 
         const isAvailable = burger && burger.status === 'available'
         const transitionOptions = {
-            classNames="order",
+            classNames: "order",
             key,
-            timeout={ enter: 5000, exit: 500}
+            timeout: {enter: 5000, exit: 500}
         }
         if (!burger) return null
         if (!isAvailable){
