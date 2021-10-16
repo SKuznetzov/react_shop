@@ -19,7 +19,11 @@ export default class Order extends Component {
                    <span>{count}</span>
                    шт. {burger.name}
                    <span>{count * burger.price} rub</span>
-                   <button className="cancellItem">&times;</button>
+                   <button 
+                       onClick={() => this.props.deleteFromOrder(key)}
+                       className="cancellItem"
+                       >&times;
+                   </button>
                </span>
             </li>)
     }

@@ -54,6 +54,11 @@ export default class App extends Component {
         order[key] = order[key] + 1 || 1
         this.setState({order})
     }
+    deleteFromOrder = key =>{
+        const order = {...this.state.order}
+        delete order[key]
+        this.setState({order})
+    }
     render() {
         return (            
             <div className="burger-paradise">
@@ -69,13 +74,17 @@ export default class App extends Component {
                         })}
                     </ul>
                 </div>
-                    <Order burgers={this.state.burgers} order={this.state.order} />
+                    <Order 
+                        deleteFromOrder={this.deleteFromOrder}
+                        burgers={this.state.burgers} 
+                        order={this.state.order} 
+                        />
                     <MenuAdmin 
-                    addBurger={this.addBurger} 
-                    loadSampleBurgers={this.loadSampleBurgers}
-                    burgers={this.state.burgers}
-                    updateBurger={this.updateBurger}
-                    deleteBurger={this.deleteBurger}
+                        addBurger={this.addBurger} 
+                        loadSampleBurgers={this.loadSampleBurgers}
+                        burgers={this.state.burgers}
+                        updateBurger={this.updateBurger}
+                        deleteBurger={this.deleteBurger}
                     />
             </div>
         )
