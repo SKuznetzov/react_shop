@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Shipment from './Shipment'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 export default class Order extends Component {
     renderOrder = (key) =>{
         const burger = this.props.burgers[key]
@@ -41,10 +42,10 @@ export default class Order extends Component {
         return (
             <div className="order-wrap">
                 <h2>Ваш заказ</h2>
-                <ul className="order">
+                <TransitionGroup component='ul' className="order">
                     {idOrders.map(this.renderOrder
                     )}
-                </ul>
+                </TransitionGroup>
                 
                 {total > 0 ? (
                     <Shipment total={total} />
