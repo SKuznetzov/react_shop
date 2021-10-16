@@ -63,6 +63,7 @@ export default class App extends Component {
                     <MenuAdmin 
                     addBurger={this.addBurger} 
                     loadSampleBurgers={this.loadSampleBurgers}
+                    burgers={this.state.burgers}
                     />
             </div>
         )
