@@ -9,12 +9,25 @@ export default class Order extends Component {
         const isAvailable = burger && burger.status === 'available'
         if (!burger) return null
         if (!isAvailable){
-            return <li className="unavailable" key={key}>
-                Извините,{burger ? burger.name : 'burger'} временно невщступен
-            </li>
+            return (
+                <CSSTransition 
+                    classNames="order"
+                    key={key}
+                    timeout={{ enter: 5000, exit: 5000}}
+                >
+                    <li className="unavailable" key={key}>
+                        Извините,{burger ? burger.name : 'burger'} временно невщступен
+                    </li>
+                </CSSTransition>
+            )
         }
 
         return (
+            <CSSTransition 
+                classNames="order"
+                key={key}
+                timeout={{ enter: 5000, exit: 5000}}
+            >
             <li key={key}>
                <span>
                    <span>{count}</span>
@@ -26,7 +39,9 @@ export default class Order extends Component {
                        >&times;
                    </button>
                </span>
-            </li>)
+            </li>
+            </CSSTransition>
+        )
     }
     render() {
         const idOrders = Object.keys(this.props.order)
