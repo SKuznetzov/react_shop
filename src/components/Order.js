@@ -7,14 +7,15 @@ export default class Order extends Component {
         const count = this.props.order[key]
 
         const isAvailable = burger && burger.status === 'available'
+        const transitionOptions = {
+            classNames="order",
+            key,
+            timeout={ enter: 5000, exit: 500}
+        }
         if (!burger) return null
         if (!isAvailable){
             return (
-                <CSSTransition 
-                    classNames="order"
-                    key={key}
-                    timeout={{ enter: 5000, exit: 500}}
-                >
+                <CSSTransition {...transitionOptions}>
                     <li className="unavailable" key={key}>
                         Извините,{burger ? burger.name : 'burger'} временно невщступен
                     </li>
@@ -23,11 +24,7 @@ export default class Order extends Component {
         }
 
         return (
-            <CSSTransition 
-                classNames="order"
-                key={key}
-                timeout={{ enter: 5000, exit: 500}}
-            >
+            <CSSTransition {...transitionOptions}>
             <li key={key}>
                <span>
                    <TransitionGroup component='span' className='count'>
