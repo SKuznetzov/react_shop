@@ -36,6 +36,11 @@ export default class App extends Component {
         burgers[`burger${Date.now()}`] = burger
         this.setState({burgers})
     }
+    updateBurger = (key,updatedBurger) =>{
+        const burgers = {...this.state.burgers}
+        burgers[key] = updatedBurger
+        this.setState({burgers})
+    }
     loadSampleBurgers = () =>{
         this.setState({burgers: sampleBurgers})
     }
@@ -64,6 +69,7 @@ export default class App extends Component {
                     addBurger={this.addBurger} 
                     loadSampleBurgers={this.loadSampleBurgers}
                     burgers={this.state.burgers}
+                    updateBurger={this.updateBurger}
                     />
             </div>
         )

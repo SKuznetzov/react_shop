@@ -1,17 +1,24 @@
 import React, { Component } from 'react'
 
 export default class EditBurgerForm extends Component {
+    handleChange = event =>{
+        const updatedBurger = {
+            ...this.props.burger,
+            [event.currentTarget.name]: event.currentTarget.value
+        }
+            this.props.updatedBurger(this.props.index,updatedBurger)
+    }
     render() {
         return (
             <div className="burger-edit">
-                <input name='name' type='text' value={this.props.burger.name } />
-                <input name='price' type='text' value={this.props.burger.price} />
-                <select name='status' className='status'value={this.props.burger.status} >
+                <input onChange={this.handleChange} name='name' type='text' value={this.props.burger.name } />
+                <input onChange={this.handleChange} name='price' type='text' value={this.props.burger.price} />
+                <select onChange={this.handleChange} name='status' className='status'value={this.props.burger.status} >
                     <option value='available'>Доступно</option>
                     <option value='unavailable'>Неоступно</option>
                 </select>
-                <textarea name='desc' value={this.props.burger.desc} />
-                <input name='image' type='text' value={this.props.burger.image} />
+                <textarea onChange={this.handleChange} name='desc' value={this.props.burger.desc} />
+                <input onChange={this.handleChange} name='image' type='text' value={this.props.burger.image} />
             </div>
         )
     }
