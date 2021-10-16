@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AddBurgerForm from './AddBurgerForm'
-import EditBurgerForm from './EditDurgerForm'
+import EditBurgerForm from './EditBurgerForm'
 export default class MenuAdmin extends Component {
     render() {
         return (
