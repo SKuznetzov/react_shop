@@ -6,7 +6,7 @@ export default class EditBurgerForm extends Component {
             ...this.props.burger,
             [event.currentTarget.name]: event.currentTarget.value
         }
-            this.props.updatedBurger(this.props.index,updatedBurger)
+            this.props.updateBurger(this.props.index,updatedBurger)
     }
     render() {
         return (
