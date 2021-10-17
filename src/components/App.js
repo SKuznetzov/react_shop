@@ -7,6 +7,7 @@ import MenuAdmin from './MenuAdmin'
 import Burger from './Burger'
 import sampleBurgers from '../sample-burgers'
 import base from '../base'
+import firebase from 'firebase/app'
 import SignIn from './auth/SignIn' 
 
 export default class App extends Component {
@@ -65,6 +66,10 @@ export default class App extends Component {
         const order = {...this.state.order}
         delete order[key]
         this.setState({order})
+    }
+    handleLogout = async ()=>{
+        await firebase.auth().signOut()
+        window.location.reload()
     }
     render() {
         return ( 
