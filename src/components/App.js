@@ -7,6 +7,7 @@ import MenuAdmin from './MenuAdmin'
 import Burger from './Burger'
 import sampleBurgers from '../sample-burgers'
 import base from '../base'
+import SignIn from './auth/SignIn' 
 
 export default class App extends Component {
 
@@ -66,8 +67,9 @@ export default class App extends Component {
         this.setState({order})
     }
     render() {
-        return (            
-            <div className="burger-paradise">
+        return ( 
+            <SignIn>          
+                <div className="burger-paradise">
                 <div className="menu">
                     <Header title="Very Hot Burger" />
                     <ul className="burgers">
@@ -92,7 +94,8 @@ export default class App extends Component {
                         updateBurger={this.updateBurger}
                         deleteBurger={this.deleteBurger}
                     />
-            </div>
+                </div>
+            </SignIn>
         )
     }
 }
