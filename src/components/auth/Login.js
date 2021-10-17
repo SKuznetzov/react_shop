@@ -17,3 +17,8 @@ const Login = (props) =>{
         </div>
     )
 }
+
+Login.propTypes = {
+    authenticate: PropTypes.func.isRequired
+}
+ export default Login
