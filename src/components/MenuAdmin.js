@@ -4,7 +4,11 @@ import PropTypes from 'prop-types'
 import AddBurgerForm from './AddBurgerForm'
 import EditBurgerForm from './EditBurgerForm'
 export default class MenuAdmin extends Component {
-
+    
+    state = {
+        photo: '',
+        user: ''
+    }
     static propTypes = {
         burgers: PropTypes.object,
         deleteBurger: PropTypes.func,
