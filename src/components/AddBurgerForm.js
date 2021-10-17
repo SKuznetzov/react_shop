@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class AddBurgerForm extends Component {
+
+    static propTypes = {
+
+addBurger: PropTypes.func
+    }
+
     nameRef = React.createRef()
     priceRef = React.createRef()
     statusRef = React.createRef()

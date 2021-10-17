@@ -1,6 +1,20 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 
 export default class Burger extends Component {
+
+    static propTypes = {
+        details: PropTypes.shape({
+            image: PropTypes.string,
+            name: PropTypes.string,
+            price: PropTypes.number,
+            desc: PropTypes.string,
+            status: PropTypes.string
+        }),
+        index: PropTypes.string,
+        addOrder: PropTypes.func
+    }
     handleClick = () =>{
         this.props.addOrder(this.props.index)
     }

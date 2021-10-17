@@ -25,5 +25,9 @@ function Header(props){
         </header>
     )
 }
+
+Header.propTypes = {
+    title: PropTypes.string.isRequired
+}
 export default Header;
 

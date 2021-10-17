@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class Shipment extends Component {
+
+    static propTypes = {
+        total:PropTypes.number
+    }
 
     render() {
         const { total } = this.props
