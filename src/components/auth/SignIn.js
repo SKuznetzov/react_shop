@@ -7,7 +7,13 @@ export default class SignIn extends Component {
     state = {
         user: ''
     }
-
+    componentDidMount(){
+        firebase.auth().onAuthStateChanged(user =>{
+            if (user){
+                this.authHandler({ user })
+            }
+        })
+    }
     authHandler = async authData =>{
         const { email } = authData.user
         this.setState({ user: email })
