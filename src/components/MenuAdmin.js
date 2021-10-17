@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
+import firebase from 'firebase/app'
 import AddBurgerForm from './AddBurgerForm'
 import EditBurgerForm from './EditBurgerForm'
 export default class MenuAdmin extends Component {
@@ -17,6 +17,19 @@ export default class MenuAdmin extends Component {
         loadSampleBurgers: PropTypes.func,
 
     }
+
+    componentDidMount(){
+        firebase.auth().onAuthStateChanged(user =>{
+            if (user){
+                this.authHandler({ user })
+            }
+        })
+    }
+    authHandler = async authData =>{
+        const { email,photoURL } = authData.user
+        this.setState({ user: email,photo: photoURL })
+    }
+
     render() {
         return (
             <div className="menu-admin">
