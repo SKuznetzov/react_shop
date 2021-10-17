@@ -98,6 +98,7 @@ export default class App extends Component {
                         burgers={this.state.burgers}
                         updateBurger={this.updateBurger}
                         deleteBurger={this.deleteBurger}
+                        handleLogout={this.handleLogout}
                     />
                 </div>
             </SignIn>

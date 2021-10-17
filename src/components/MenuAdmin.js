@@ -16,6 +16,15 @@ export default class MenuAdmin extends Component {
     render() {
         return (
             <div className="menu-admin">
+                <div className="login-header">
+                    <div className="avatar">
+                        <img src='/images/avatar.png' alt='avatar' />
+                    </div>
+                    <button className="buttonLogout"
+                            onClick={this.props.handleLogout}
+                            >Выйти
+                    </button>
+                </div>
                 <h2>Управление меню</h2>
                 {Object.keys(this.props.burgers).map(key =>{
                     return <EditBurgerForm 
