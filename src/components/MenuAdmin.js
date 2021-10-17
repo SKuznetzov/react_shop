@@ -31,17 +31,19 @@ export default class MenuAdmin extends Component {
     }
 
     render() {
+        const { user, photo } = this.state
+        const avatar = photo ? photo : '/images/avatar.png'
         return (
             <div className="menu-admin">
-                <div className="login-header">
+                { user ? <div className="login-header">
                     <div className="avatar">
-                        <img src='/images/avatar.png' alt='avatar' />
+                        <img src={avatar} alt={user} />
                     </div>
                     <button className="buttonLogout"
                             onClick={this.props.handleLogout}
                             >Выйти
                     </button>
-                </div>
+                </div> : null }
                 <h2>Управление меню</h2>
                 {Object.keys(this.props.burgers).map(key =>{
                     return <EditBurgerForm 
