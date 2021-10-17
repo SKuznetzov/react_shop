@@ -9,7 +9,8 @@ export default class SignIn extends Component {
     }
 
     authHandler = async authData =>{
-        console.log(authData)
+        const { email } = authData.user
+        this.setState({ user: email })
     }
     authenticate = ()=>{
         const authProvider = new firebase.auth['GithubAuthProvider']()
